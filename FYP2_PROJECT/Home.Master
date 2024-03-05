@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="FYP2_PROJECT.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+   
+
+    <%--datatables css --%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <%--fontawesome css --%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+     <%--MyCustomcss--%>
+   <link href="Mycss/product.css" rel="stylesheet" />
+
+    <%--bootstrap--%>
+      
+   
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/esm/popper-utils.js"></script>
+    <script src="Scripts/esm/popper-utils.min.js"></script>
+    <script src="Scripts/esm/popper.js"></script>
+    <script src="Scripts/esm/popper.min.js"></script>
+
+    <script src="Scripts/src/index.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.0.0-vsdoc.js"></script>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/jquery-3.0.0.slim.js"></script>
+    <script src="Scripts/jquery-3.0.0.slim.min.js"></script>
+    <script src="Scripts/popper-utils.js"></script>
+    <script src="Scripts/popper-utils.min.js"></script>
+    <script src="Scripts/popper.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbars/">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body style="background-color:rgb(245, 245, 245);">
+    <form id="form1" runat="server">
+
+<!-- ======= Header =======  navbar navbar-dark bg-dark-->
+   
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <a class="p-2 navbar-brand" href="#"><img src="../icon/logo.png" width="90" height="30"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/User/userPage.aspx">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/User/RequestItem.aspx">Borrow Item/Book Item</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/User/MyRequests.aspx">My Request</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/User/Setting.aspx">Setting</a>
+      </li>
+        <!--
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/User/BookingClass.aspx" role="button" data-toggle="dropdown" aria-expanded="false">
+          Booking Class
+        </a>
+          
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/User/BookingClass.aspx">Computer Lab</a>
+          <a class="dropdown-item" href="/User/BookingClass.aspx">BK Class</a>
+        </div>
+              
+      </li>-->
+      <li class="nav-item">
+           <asp:LinkButton ID="LinkLogout"  CssClass="nav-link text-danger " runat="server" OnClick="LinkLogout_Click">Logout</asp:LinkButton>
+      </li>
+    </ul>
+   
+  </div>
+</nav>
+       
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+     
+    </form>
+
+</body>
+</html>

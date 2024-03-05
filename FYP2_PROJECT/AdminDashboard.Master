@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminDashboard.master.cs" Inherits="FYP2_PROJECT.AdminDashboard" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    
+    <title></title>
+   
+     <%--MyCustomcss--%>
+
+    <link href="Mycss/Dashboard.css" rel="stylesheet" />
+   
+    <link href="Mycss/NavigationBar.css" rel="stylesheet" />
+    <link href="Mycss/form.css" rel="stylesheet" />
+    <link href="Mycss/design.css" rel="stylesheet" />
+    <link href="Mycss/icon/icofont/css/icofont.css" rel="stylesheet" />
+    <link href="Mycss/icon/themify-icons/themify-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <%--Bootstrap--%>
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.0.0-vsdoc.js"></script>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/jquery-3.0.0.slim.js"></script>
+    <script src="Scripts/jquery-3.0.0.slim.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/popper.min.js"></script>
+    <script src="Scripts/popper-utils.js"></script>
+    <script src="Scripts/popper-utils.min.js"></script>
+    <script src="Scripts/popper.js"></script>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbars/">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <%--DatabTable--%>
+   
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</head>
+
+
+<body id="body" style="background-color: rgb(238, 238, 238);" runat="server">
+   <form runat="server">
+         <ul>
+      <li>
+          <asp:LinkButton ID="LinkHome" runat="server" OnClick="LinkHome_Click">Home</asp:LinkButton>
+
+      </li>
+
+        
+             <li class="mydropdown">
+                  <asp:LinkButton ID="LinkRequest" CssClass="mydropbtn" runat="server" OnClick="LinkRequest_Click">Manage Request</asp:LinkButton>
+                     <div class="mydropdown-content">
+                         <a href="/Admin/LCDRequest.aspx">LCD Request</a>
+                         <a href="/Admin/AccsRequest.aspx">Accessories Request</a>
+                         <a href="/Admin/LABRequest.aspx">Lab Keys Request</a>
+                         <a href="/Admin/BKRequest.aspx">BK keys Request</a>
+                     </div>
+            </li>
+            
+
+        
+
+               <li class="mydropdown">
+            
+            <asp:LinkButton ID="LinkManageReturn" runat="server" OnClick="LinkManageReturn_Click">Manage Return</asp:LinkButton>
+                   <div class="mydropdown-content">
+                         <a href="/Admin/LCDReturn.aspx">LCD Record</a>
+                         <a href="/Admin/AccsReturn.aspx">Accessories Record</a>
+                         <a href="/Admin/LabReturn.aspx">Lab Record</a>
+                         <a href="/Admin/BKReturn.aspx">BK Record</a>
+                     </div>
+        </li>
+
+
+
+              <li class="mydropdown">
+                   <asp:LinkButton ID="LinkRecord" runat="server" OnClick="LinkReport_Click">View Record</asp:LinkButton>
+                     <div class="mydropdown-content">
+                         <a href="/Admin/LCDRecord.aspx">LCD Record</a>
+                         <a href="/Admin/AccsRecord.aspx">Accessories Record</a>
+                         <a href="/Admin/LABRecord.aspx">Lab Record</a>
+                         <a href="/Admin/BKRecord.aspx">BK Record</a>
+                     </div>
+            </li>
+            
+              <li class="mydropdown">
+                  <asp:LinkButton ID="LinkInventory" CssClass="mydropbtn" runat="server" OnClick="LinkInventory_Click">Manage Inventory</asp:LinkButton>
+                     <div class="mydropdown-content">
+                         <a href="/Admin/LCD.aspx">LCD</a>
+                         <a href="/Admin/Accessories.aspx">Accessories</a>
+                         <a href="/Admin/LabKey.aspx">Lab Keys</a>
+                         <a href="/Admin/BKkeys.aspx">BK keys</a>
+                     </div>
+            </li>
+     
+        <li>
+            <asp:LinkButton ID="LinkManageUser" runat="server" OnClick="LinkManageUser_Click">Manage User</asp:LinkButton>
+
+        </li>
+
+              <li>
+            <asp:LinkButton ID="LinkSchedule" runat="server" OnClick="LinkSchedule_Click">Manage Schedule</asp:LinkButton>
+
+        </li>
+       
+        <li style="float:right">
+            <asp:LinkButton ID="LinkLogout" runat="server" OnClick="LinkLogout_Click">Logout</asp:LinkButton>
+
+        </li>
+     </ul>
+
+  
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+
+
+  
+  </form>
+
+   
+</body>
+
+   
+   
+</html>
+
+
+
+
+ 
